@@ -44,7 +44,7 @@ And then execute:
 Given this code:
 
 ```ruby
-require 'fix-its'
+require 'fix/its'
 
 Fix.describe -6 * 7 do
   its(:abs) { MUST Equal: 42 }
