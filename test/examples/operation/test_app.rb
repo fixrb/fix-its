@@ -6,7 +6,7 @@ require 'spectus'
 
 t = Fix::Test.new @app do
   on :+, 1_040 do
-    its(:itself) { MUST Equal: 2_080 }
+    its(:to_i) { MUST Equal: 2_080 }
 
     on(:+, 10) do
       its(:abs) { MUST Equal: 2_090 }
