@@ -70,7 +70,7 @@ The checksum of a file can be checked using the `sha512sum` command.  For
 example:
 
     $ sha512sum pkg/fix-its-0.1.0.gem
-    d12d7d9c2a4fdfe075cbb7a141fa5f2195175891e4098c7e1a28c8bca655ab44fb9d67b6a2e3991d0f852026c5e4537fdf7e314575c68d1c80b3a4b1eb1c041f  pkg/fix-its-0.1.0.gem
+    26198b7812a5ac118a5f2a1b63927871b3378efb071b37abb7e1ba87c1aac9f3a6b45eeae87d9dc647b194c15171b13f15e46503a9a1440b1233faf924381ff5  pkg/fix-its-0.1.0.gem
 
 ## Versioning
 
