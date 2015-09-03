@@ -1,5 +1,5 @@
 require_relative File.join '..', '..', 'support', 'coverage'
-require_relative File.join '..', '..', '..', 'lib', 'fix'
+require_relative File.join '..', '..', '..', 'lib', 'fix', 'its'
 require 'spectus'
 
 @app = 1_040
