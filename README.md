@@ -39,6 +39,10 @@ And then execute:
 
     $ bundle
 
+## Let's get started!
+
+[![asciicast](https://asciinema.org/a/25973.png)](https://asciinema.org/a/25973)
+
 ## Usage
 
 Given this code:
