@@ -1,4 +1,4 @@
-# Fix
+# Fix::Its
 
 [![Build Status](https://travis-ci.org/fixrb/fix-its.svg?branch=master)][travis]
 [![Gem Version](https://badge.fury.io/rb/fix-its.svg)][gem]
