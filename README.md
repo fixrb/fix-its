@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/fixrb/fix-its.svg?branch=master)][travis]
 [![Gem Version](https://badge.fury.io/rb/fix-its.svg)][gem]
 [![Inline docs](http://inch-ci.org/github/fixrb/fix-its.svg?branch=master)][inchpages]
+[![Documentation](http://img.shields.io/:yard-docs-38c800.svg)][rubydoc]
 
 > Provides `its` method for attribute matching.
 
@@ -95,3 +96,4 @@ See `LICENSE.md` file.
 [gem]: https://rubygems.org/gems/fix-its
 [travis]: https://travis-ci.org/fixrb/fix-its
 [inchpages]: http://inch-ci.org/github/fixrb/fix-its/
+[rubydoc]: http://rubydoc.info/gems/fix-its/frames
