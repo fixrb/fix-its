@@ -22,10 +22,7 @@ module Fix
     #
     # @return [Array] List of results.
     def its(method_name, &spec)
-      i = It.new do
-        Sandbox.new(@front_object,
-                    *@challenges, Spectus::Challenge.new(method_name)).actual
-      end
+      i = It.new(@front_object, *@challenges, Defi.send(method_name))
 
       result = begin
                  i.instance_eval(&spec)
@@ -33,7 +30,7 @@ module Fix
                  f
                end
 
-      print result.to_char
+      print result.to_char if @configuration.fetch(:verbose, true)
       results << result
     end
   end
