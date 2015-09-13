@@ -5,11 +5,11 @@ require 'fix'
 # @api public
 #
 module Fix
-  # Its's helper.
+  # Open the on class.
   #
   # @api private
   #
-  module Its
+  class On
     # Add its method to the DSL.
     #
     # @api public
@@ -22,7 +22,9 @@ module Fix
     #
     # @return [Array] List of results.
     def its(method_name, &spec)
-      i = It.new(@front_object, *@challenges, Defi.send(method_name))
+      challenges = @challenges + [Defi.send(method_name)]
+
+      i = It.new(@front_object, challenges, @helpers.dup)
 
       result = begin
                  i.instance_eval(&spec)
@@ -30,16 +32,11 @@ module Fix
                  f
                end
 
-      print result.to_char if @configuration.fetch(:verbose, true)
+      if @configuration.fetch(:verbose, true)
+        print result.to_char(@configuration.fetch(:color, false))
+      end
+
       results << result
     end
-  end
-
-  # Include the content of the Its module in to On class.
-  #
-  # @api private
-  #
-  class On
-    include Its
   end
 end
