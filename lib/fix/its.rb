@@ -22,7 +22,7 @@ module Fix
     #
     # @return [Array] List of results.
     def its(method, &spec)
-      i = It.new(front_object, (challenges + [Defi.send(method)]), helpers.dup)
+      i = It.new(described, (challenges + [Defi.send(method)]), helpers.dup)
 
       result = begin
                  i.instance_eval(&spec)
