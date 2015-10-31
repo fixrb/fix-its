@@ -15,7 +15,7 @@ module Fix
     # @api public
     #
     # @example Its absolute value must equal 42
-    #   its(:abs) { MUST Equal: 42 }
+    #   its(:abs) { MUST equal 42 }
     #
     # @param method [Symbol] The identifier of a method.
     # @param spec   [Proc]   A spec to compare against the computed value.

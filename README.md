@@ -52,7 +52,7 @@ Given this code:
 require 'fix/its'
 
 Fix.describe -6 * 7 do
-  its(:abs) { MUST Equal: 42 }
+  its(:abs) { MUST equal 42 }
 end
 ```
 
@@ -61,7 +61,7 @@ The output should look like this:
     $ ruby answer_spec.rb
     .
 
-    Ran 1 tests in 0.00038 seconds
+    Ran 1 tests in 0.000164 seconds
     100% compliant - 0 infos, 0 failures, 0 errors
 
 ## Security
