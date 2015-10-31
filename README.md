@@ -97,3 +97,9 @@ See `LICENSE.md` file.
 [travis]: https://travis-ci.org/fixrb/fix-its
 [inchpages]: http://inch-ci.org/github/fixrb/fix-its/
 [rubydoc]: http://rubydoc.info/gems/fix-its/frames
+
+***
+
+This project is sponsored by:
+
+[![Sashite](http://www.sashite.com/assets/img/sashite.png)](http://www.sashite.com/)
