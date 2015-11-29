@@ -24,11 +24,7 @@ module Fix
     def its(method, &spec)
       i = It.new(described, (challenges + [Defi.send(method)]), helpers.dup)
 
-      result = begin
-                 i.instance_eval(&spec)
-               rescue Spectus::Result::Fail => f
-                 f
-               end
+      result = i.verify(&spec)
 
       if configuration.fetch(:verbose, true)
         print result.to_char(configuration.fetch(:color, false))
