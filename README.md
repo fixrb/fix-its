@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/fixrb/fix-its.svg?branch=master)][travis]
 [![Code Climate](https://codeclimate.com/github/fixrb/fix-its/badges/gpa.svg)][codeclimate]
+[![Dependency Status](https://gemnasium.com/fixrb/fix-its.svg)][gemnasium]
 [![Gem Version](https://badge.fury.io/rb/fix-its.svg)][gem]
 [![Inline docs](http://inch-ci.org/github/fixrb/fix-its.svg?branch=master)][inchpages]
 [![Documentation](http://img.shields.io/:yard-docs-38c800.svg)][rubydoc]
@@ -97,6 +98,7 @@ See `LICENSE.md` file.
 [gem]: https://rubygems.org/gems/fix-its
 [travis]: https://travis-ci.org/fixrb/fix-its
 [codeclimate]: https://codeclimate.com/github/fixrb/fix-its
+[gemnasium]: https://gemnasium.com/fixrb/fix-its
 [inchpages]: http://inch-ci.org/github/fixrb/fix-its
 [rubydoc]: http://rubydoc.info/gems/fix-its/frames
 
