@@ -21,6 +21,8 @@ module Fix
     # @param spec   [Proc]   A spec to compare against the computed value.
     #
     # @return [Array] List of results.
+    #
+    # rubocop:disable AbcSize
     def its(method, &spec)
       i = It.new(described, (challenges + [Defi.send(method)]), helpers.dup)
 
