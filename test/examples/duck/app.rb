@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A Duck application
 class Duck
   def walks

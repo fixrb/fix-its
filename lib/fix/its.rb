@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'fix'
 
 # Namespace for the Fix framework.
@@ -34,5 +36,6 @@ module Fix
 
       results << result
     end
+    # rubocop:enable AbcSize
   end
 end
