@@ -1,1 +1,46 @@
-inherit_from: .rubocop_todo.yml
+# The target Ruby version is read from `required_ruby_version` in the gemspec.
+AllCops:
+  NewCops: enable
+
+plugins:
+  - rubocop-md
+  - rubocop-performance
+  - rubocop-rake
+  - rubocop-thread_safety
+
+# Most readable form.
+Layout/HashAlignment:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+# The tests are a flat list of `raise unless …` checks, each one a sentence:
+# an empty line after each would double their length for nothing.
+Layout/EmptyLineAfterGuardClause:
+  Exclude:
+    - test/**/*
+
+# Every class, module and method of the library carries a comment; YARD
+# (`--fail-on-warning` in .yardopts) checks that its tags match the code.
+# Enabled explicitly: the next major release of RuboCop is expected to
+# disable `Style/Documentation` by default.
+Style/Documentation:
+  Enabled: true
+  Include:
+    - lib/**/*.rb
+
+Style/DocumentationMethod:
+  Enabled: true
+  Include:
+    - lib/**/*.rb
+
+# `::Spectus::Requirement === object` asks the class, not the object, which
+# user code may have redefined: the form the library wants.
+Style/CaseEquality:
+  Exclude:
+    - lib/**/*
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes

@@ -1,10 +1,11 @@
+# Build and tool output
 /.bundle/
-/.ruby-version
-/.yardoc
-/Gemfile.lock
-/_yardoc/
+/.yardoc/
 /coverage/
 /doc/
 /pkg/
-/spec/reports/
-/tmp/
+/vendor/bundle/
+*.gem
+
+# macOS
+.DS_Store

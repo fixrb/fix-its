@@ -1,26 +1,23 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |spec|
-  spec.name          = 'fix-its'
-  spec.version       = File.read('VERSION.semver').chomp
-  spec.authors       = ['Cyril Kato']
-  spec.email         = ['contact@cyril.email']
+  spec.name                   = "fix-its"
+  spec.version                = File.read(File.join(__dir__, "VERSION.semver")).chomp
+  spec.author                 = "Cyril Kato"
+  spec.email                  = "contact@cyril.email"
+  spec.summary                = "The word its for Fix: a method of the subject and its expectation on one line"
+  spec.description            = "Fix::Its adds the word its to the language of Fix: a method of the subject and one " \
+                                "expectation about what it returns, on one line. its(:size) { MUST eq 3 } is " \
+                                "on(:size) { it MUST eq 3 }, and the result points at the line of its."
+  spec.homepage               = "https://fixrb.dev/gems/fix-its/"
+  spec.license                = "MIT"
+  spec.files                  = Dir["LICENSE.md", "README.md", "lib/**/*.rb", base: __dir__]
+  spec.required_ruby_version  = ">= 3.3.0"
 
-  spec.summary       = 'Fix extension gem for attribute matching.'
-  spec.description   = 'Provides "its" method for attribute matching.'
-  spec.homepage      = 'https://github.com/fixrb/fix-its'
-  spec.license       = 'MIT'
+  spec.metadata["bug_tracker_uri"]       = "https://github.com/fixrb/fix-its/issues"
+  spec.metadata["documentation_uri"]     = "https://rubydoc.info/gems/fix-its"
+  spec.metadata["rubygems_mfa_required"] = "true"
+  spec.metadata["source_code_uri"]       = "https://github.com/fixrb/fix-its"
 
-  spec.files         =
-    `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^test/}) }
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ['lib']
-
-  spec.add_dependency 'fix',                    '~> 0.18.1'
-
-  spec.add_development_dependency 'bundler',    '~> 2.0'
-  spec.add_development_dependency 'rake',       '~> 12.3'
-  spec.add_development_dependency 'rubocop',    '~> 0.67'
-  spec.add_development_dependency 'simplecov',  '~> 0.16'
-  spec.add_development_dependency 'yard',       '~> 0.9'
+  spec.add_dependency "fix", "~> 1.0"
 end

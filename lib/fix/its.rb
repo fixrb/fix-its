@@ -1,41 +1,37 @@
 # frozen_string_literal: true
 
-require 'fix'
+require "fix"
 
-# Namespace for the Fix framework.
-#
-# @api public
-#
+# The specifications of Fix: this gem adds the word `its` to their language.
 module Fix
-  # Open the on class.
-  #
-  # @api private
-  #
-  class On
-    # Add its method to the DSL.
-    #
-    # @api public
-    #
-    # @example Its absolute value must equal 42
-    #   its(:abs) { MUST equal 42 }
-    #
-    # @param method [Symbol] The identifier of a method.
-    # @param spec   [Proc]   A spec to compare against the computed value.
-    #
-    # @return [Array] List of results.
-    #
-    # rubocop:disable AbcSize
-    def its(method, &spec)
-      i = It.new(described, (challenges + [Defi.send(method)]), helpers.dup)
+  # The word `its`, added to the language of a specification: a method of
+  # the subject and one expectation about what it returns, on one line.
+  # `its(:size) { MUST eq 3 }` is `on(:size) { it MUST eq 3 }`, the result
+  # pointing at the line of `its`.
+  module Its
+    # @param name [Symbol] the method, followed by its positional and keyword
+    #   arguments, as for `on`
+    # @yieldreturn [Spectus::Requirement] the requirement, `MUST eq(3)` say
+    # @return [nil]
+    # @raise [ArgumentError] when the name is not a Symbol, without a block,
+    #   or when the block does not give a requirement
+    def its(name, *, **, &block)
+      raise ::ArgumentError, "a block must be given" unless block
 
-      result = i.verify(&spec)
+      location = caller_locations(1, 1).fetch(0)
+      on(name, *, **) do
+        requirement = instance_exec(&block)
+        unless ::Spectus::Requirement === requirement
+          raise ::ArgumentError, "the block of its gives a requirement: its(:size) { MUST eq(3) }"
+        end
 
-      if configuration.fetch(:verbose, true)
-        print result.to_char(configuration.fetch(:color, false))
+        it(requirement, location:)
       end
-
-      results << result
     end
-    # rubocop:enable AbcSize
+  end
+
+  # The language of a specification, with the word `its` among its words.
+  class Dsl
+    include Its
   end
 end
