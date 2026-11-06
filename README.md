@@ -6,6 +6,8 @@
 
 Fix::Its adds the word `its` to the language of [Fix](https://github.com/fixrb/fix): a method of the subject and one expectation about what it returns, on one line. `its(:size) { MUST eq 3 }` is `on(:size) { it MUST eq 3 }`, and the result points at the line of `its`.
 
+[fixrb.dev](https://fixrb.dev/gems/fix-its/) presents the gem, and the guide of Fix shows the word in [The word its](https://fixrb.dev/gems/fix/v1/its/).
+
 ## Installation
 
 ```ruby
