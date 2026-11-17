@@ -1,7 +1,7 @@
 # Fix::Its
 
 [![Version](https://img.shields.io/github/v/tag/fixrb/fix-its?label=Version&logo=github)](https://github.com/fixrb/fix-its/tags)
-[![Yard documentation](https://img.shields.io/badge/Yard-documentation-blue.svg?logo=github)](https://rubydoc.info/github/fixrb/fix-its/main)
+[![Yard documentation](https://img.shields.io/badge/Yard-documentation-blue.svg?logo=github)](https://gemdocs.org/gems/fix-its/latest/)
 [![License](https://img.shields.io/github/license/fixrb/fix-its?label=License&logo=github)](https://github.com/fixrb/fix-its/raw/main/LICENSE.md)
 
 Fix::Its adds the word `its` to the language of [Fix](https://github.com/fixrb/fix): a method of the subject and one expectation about what it returns, on one line. `its(:size) { MUST eq 3 }` is `on(:size) { it MUST eq 3 }`, and the result points at the line of `its`.
